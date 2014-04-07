@@ -112,8 +112,8 @@ class ServerListPing17 {
 
         StatusResponse response = null;
         try {
-        	response = gson.fromJson(json, StatusResponse.class);
-        	long now = System.currentTimeMillis();
+            response = gson.fromJson(json, StatusResponse.class);
+            long now = System.currentTimeMillis();
             dataOutputStream.writeByte(0x09); //size of packet
             dataOutputStream.writeByte(0x01); //0x01 for ping
             dataOutputStream.writeLong(now); //time!?
@@ -131,8 +131,8 @@ class ServerListPing17 {
             
             response.setTime((int) (now - pingtime));
         }
-        catch (IOException exception) {
-        	exeception.printStacktrace();
+        catch (Exception exception) {
+            exception.printStacktrace();    
         }
         
         
