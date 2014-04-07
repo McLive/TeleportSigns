@@ -132,7 +132,7 @@ class ServerListPing17 {
             response.setTime((int) (now - pingtime));
         }
         catch (Exception exception) {
-            exception.printStacktrace();    
+            exception.printStacktrace();
         }
         
         
