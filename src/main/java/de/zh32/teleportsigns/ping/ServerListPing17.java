@@ -112,7 +112,7 @@ class ServerListPing17 {
 
         StatusResponse response = null;
         try {
-            System.out.println("Got this from " + host.getHostString() + ": " + json);
+            System.out.println("Got this from " + host.getHostString() + ":" + host.getPort() + ": " + json);
             response = gson.fromJson(json, StatusResponse.class);
             long now = System.currentTimeMillis();
             dataOutputStream.writeByte(0x09); //size of packet
